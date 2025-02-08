@@ -12,6 +12,10 @@ const VERIFY_TOKEN = 'pagebot';
 const PAGE_ACCESS_TOKEN = fs.readFileSync('token.txt', 'utf8').trim();
 const COMMANDS_PATH = path.join(__dirname, 'commands');
 
+app.get("/", async function (req, res) {
+res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // Webhook verification
 app.get('/webhook', (req, res) => {
   const { 'hub.mode': mode, 'hub.verify_token': token, 'hub.challenge': challenge } = req.query;
