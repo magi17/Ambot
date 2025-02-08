@@ -13,7 +13,7 @@ const PAGE_ACCESS_TOKEN = fs.readFileSync('token.txt', 'utf8').trim();
 const COMMANDS_PATH = path.join(__dirname, 'commands');
 
 app.get("/", async function (req, res) {
-res.sendFile(path.join(__dirname, "index.html"));
+res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 // Webhook verification
